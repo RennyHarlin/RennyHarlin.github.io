@@ -1,0 +1,223 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+/* Dark mode variables */
+:root {
+  --bg-color: #fdfdfd;
+  --text-color: #111;
+  --link-color: #2a7ae2;
+  --link-visited-color: #1756a9;
+  --border-color: #e8e8e8;
+  --code-bg-color: #eef;
+  --header-bg-color: #424242;
+  --header-text-color: #ffffff;
+}
+
+html[data-theme="dark"] {
+  --bg-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --link-color: #66b3ff;
+  --link-visited-color: #9999ff;
+  --border-color: #333;
+  --code-bg-color: #2d2d2d;
+  --header-bg-color: #2d2d2d;
+  --header-text-color: #ffffff;
+}
+
+/* Apply dark mode styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}
+
+a:hover {
+  color: var(--text-color);
+}
+
+/* Header styling */
+.site-header {
+  background-color: var(--header-bg-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.site-title,
+.site-nav .page-link {
+  color: var(--header-text-color) !important;
+}
+
+.site-nav .page-link:hover {
+  color: var(--link-color) !important;
+}
+
+/* Code blocks */
+pre,
+code {
+  background-color: var(--code-bg-color);
+  border: 1px solid var(--border-color);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--border-color);
+  color: var(--text-color);
+}
+
+/* Tables */
+table {
+  border: 1px solid var(--border-color);
+}
+
+th, td {
+  border: 1px solid var(--border-color);
+}
+
+/* Profile picture styling */
+.profile-pic {
+  border-radius: 50%;
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="dark"] .profile-pic {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .profile-pic:hover {
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  background: var(--bg-color);
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  border-radius: 25px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  min-width: 90px;
+  text-align: center;
+}
+
+.theme-toggle:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="dark"] .theme-toggle {
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] .theme-toggle:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive improvements */
+@media screen and (max-width: 600px) {
+  .profile-pic {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* Improved readability */
+.post-content,
+.page-content {
+  line-height: 1.6;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.page-content h1,
+.page-content h2,
+.page-content h3 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: var(--text-color);
+}
+
+/* Better spacing for posts */
+.post-list-item {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.post-list-item:last-child {
+  border-bottom: none;
+}
+
+/* Improved post meta styling */
+.post-meta {
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* Footer improvements */
+.site-footer {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer-heading,
+.contact-list,
+.social-media-list {
+  color: var(--header-text-color);
+}
+
+.footer-col a {
+  color: var(--link-color);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus improvements for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}

@@ -1,6 +1,11 @@
 ---
-# Feel free to add content and custom Front Matter to this file.
-# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-
 layout: home
 ---
+
+## Welcome to My Blog! 🚀
+
+Hi there! I'm Renny, and this is where I share my journey through the world of technology and programming.
+
+Here you'll find posts about things I've learned the hard way, so hopefully you won't have to! From debugging nightmares to breakthrough moments, I document it all.
+
+### Recent Posts
